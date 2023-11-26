@@ -85,13 +85,24 @@ export default function Header() {
       )}
       <div className='hidden md:flex items-center justify-between'>
         <nav className='flex items-center gap-8 text-gray-400 font-semibold'>
-          <Link className='text-primary font-semibold text-2xl' href={"/"}>
+          <Link className='text-primary font-semibold text-2xl mb-2' href={"/"}>
             <Image src='/log.png' width={100} height={50} />
           </Link>
-          <Link href={"/"}>Inicio</Link>
-          <Link href={"/menu"}>Menu</Link>
-          <Link href={"/#about"}>Nosotros</Link>
-          <Link href={"/#contact"}>Contacto</Link>
+
+          <Link href={"/"} className='mb-2'>
+            Inicio
+          </Link>
+
+          <Link href={"/menu"} className='mb-2'>
+            Menu
+          </Link>
+
+          <Link href={"/#about"} className='mb-2'>
+            Nosotros
+          </Link>
+          <Link href={"/#contact"} className='mb-2'>
+            Contacto
+          </Link>
         </nav>
         <nav className='flex items-center gap-4 text-gray-500 font-semibold'>
           <AuthLinks status={status} userName={userName} />

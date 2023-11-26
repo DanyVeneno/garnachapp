@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Right from "@/components/icons/Right";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -23,7 +24,7 @@ export default function Hero() {
             <Right />
           </button>
           <button className='flex gap-2 items-center'>
-            Ver Menu <Right />
+            <Link href='/menu'>Ver Menu</Link> <Right />
           </button>
         </div>
       </div>
