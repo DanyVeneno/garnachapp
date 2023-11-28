@@ -13,13 +13,13 @@ input[type="password"],
 input[type="tel"],
 input[type="text"] {
   @apply block w-full mb-2 rounded-xl;
-  @apply border p-2 border-gray-300 bg-orange-400;
+  @apply border p-2 border-orange-100 bg-zinc-500;
 }
 input[type="email"]:disabled,
 input[type="password"]:disabled,
 input[type="tel"]:disabled,
 input[type="text"]:disabled {
-  @apply bg-gray-300 border-0 cursor-not-allowed text-gray-500;
+  @apply bg-gray-300 border-0 cursor-not-allowed text-zinc-100;
 }
 label {
   @apply text-gray-500 text-sm leading-tight;
