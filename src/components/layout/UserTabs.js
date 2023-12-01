@@ -19,7 +19,7 @@ export default function UserTabs({ isAdmin }) {
           </Link>
           <Link
             href={"/menu-items"}
-            className={path.includes("/menu-items") ? "active" : ""} //checar este cambio diagonal
+            className={path.includes("menu-items") ? "active" : ""} //checar este cambio diagonal
           >
             Menu
           </Link>
