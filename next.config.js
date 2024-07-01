@@ -4,14 +4,14 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "*.googleusercontent.com"
+        hostname: "*.googleusercontent.com",
       },
       {
         protocol: "https",
-        hostname: "garnacha-app.s3.amazonaws.com"
-      }
-    ]
-  }
+        hostname: "garnachapp.s3.amazonaws.com",
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
