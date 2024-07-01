@@ -40,7 +40,7 @@ export default function Home() {
           mainHeader={"Llamanos ¡Dale Click!"}
         />
         <div className='mt-8'>
-          <a className='text-4xl underline text-gray-500' href='tel:5610731990'>
+          <a className='text-4xl underline text-gray-200' href='tel:5610731990'>
             56 1073-1990
           </a>
         </div>
