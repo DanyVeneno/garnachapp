@@ -19,7 +19,7 @@ input[type="email"]:disabled,
 input[type="password"]:disabled,
 input[type="tel"]:disabled,
 input[type="text"]:disabled {
-  @apply bg-gray-300 border-0 cursor-not-allowed text-zinc-100;
+  @apply bg-gray-50 border-0 cursor-not-allowed text-zinc-900;
 }
 label {
   @apply text-gray-500 text-sm leading-tight;
