@@ -18,7 +18,7 @@ export default function RegisterPage() {
     const response = await fetch("/api/register", {
       method: "POST",
       body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "application/json" }
+      headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
       setUserCreated(true);
@@ -65,7 +65,7 @@ export default function RegisterPage() {
         <button type='submit' disabled={creatingUser}>
           Registrame
         </button>
-        <div className='my-4 text-center text-gray-500'>
+        <div className='my-4 text-center text-blue-500'>
           ó puedes iniciar sesión con
         </div>
         <button
@@ -75,7 +75,7 @@ export default function RegisterPage() {
           <Image src={"/google.png"} alt={""} width={24} height={24} />
           Registrarme con google
         </button>
-        <div className='text-center my-4 text-gray-500 border-t pt-4'>
+        <div className='text-center my-4 text-blue-500 border-t pt-4'>
           ¿Si ya tienes cuenta?{" "}
           <Link className='underline' href={"/login"}>
             Inicia Sesión Aqui &raquo;

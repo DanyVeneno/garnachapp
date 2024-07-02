@@ -30,7 +30,7 @@ export default function CartPage() {
         streetAddress,
         city,
         postalCode,
-        country
+        country,
       };
       setAddress(addressFromProfile);
     }
@@ -53,8 +53,8 @@ export default function CartPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           address,
-          cartProducts
-        })
+          cartProducts,
+        }),
       }).then(async (response) => {
         if (response.ok) {
           resolve();
@@ -68,7 +68,7 @@ export default function CartPage() {
     await toast.promise(promise, {
       loading: "Preparando tu Pedido...",
       success: "Ir A Pagar...",
-      error: "Algo Esta Mal... Por Favor Revisa Tus Datos"
+      error: "Algo Esta Mal... Por Favor Revisa Tus Datos",
     });
   }
 
@@ -100,7 +100,7 @@ export default function CartPage() {
               />
             ))}
           <div className='py-2 pr-16 flex justify-end items-center'>
-            <div className='text-zinc-200'>
+            <div className='text-zinc-700'>
               Subtotal:
               <br />
               Entrega:
