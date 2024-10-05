@@ -20,7 +20,12 @@ export default function Hero() {
 
         <div className='flex gap-4 text-sm'>
           <button className='bg-primary flex gap-2 uppercase items-center text-zinc-300 px-4 py-2 rounded-full'>
-            Pedir
+            <Link
+              href='https://youtu.be/P3uGYJ7bkRY?list=PLzLMvQMoqVUdFime9MdDx2xp_ofbDoKKn'
+              target='_blank'
+            >
+              Ver Video
+            </Link>
             <Right />
           </button>
           <button className='flex gap-2 items-center'>
