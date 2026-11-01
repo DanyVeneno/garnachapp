@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-31",
+  "externalCalls": 0,
+  "checks": 6,
+  "findings": [
+    {
+      "id": "SEC-01a",
+      "description": "GET profile by id skips session and exposes password hash",
+      "reproduced": true,
+      "scope": "isolated route logic with dependency doubles"
+    },
+    {
+      "id": "SEC-01b",
+      "description": "PUT profile by id skips session and forwards admin=true to persistence",
+      "reproduced": true,
+      "scope": "isolated route logic with dependency doubles"
+    },
+    {
+      "id": "SEC-02",
+      "description": "Anonymous order lookup by id returns another customer order",
+      "reproduced": true,
+      "scope": "isolated route logic with dependency doubles"
+    },
+    {
+      "id": "SEC-03",
+      "description": "Upload accepts arbitrary HTML file without a session check",
+      "reproduced": true,
+      "scope": "isolated route logic with dependency doubles"
+    },
+    {
+      "id": "SEC-04",
+      "description": "One-character password reaches persistence because Error is not thrown",
+      "reproduced": true,
+      "scope": "isolated route logic with dependency doubles"
+    },
+    {
+      "id": "SEC-05",
+      "description": "Checkout address overwrites order owner and saves client price snapshot",
+      "reproduced": true,
+      "scope": "isolated route logic with dependency doubles"
+    }
+  ],
+  "limitation": "Imports stripped for isolated business-logic execution. Does not verify framework dispatch, real sessions, MongoDB, S3, or Stripe."
+}

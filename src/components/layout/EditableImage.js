@@ -45,7 +45,7 @@ export default function EditableImage({ link, setLink }) {
         </div>
       )}
       <label>
-        <input type='file' className='hidden' onChange={handleFileChange} />
+        <input type='file' accept='image/png,image/jpeg,image/webp' className='hidden' onChange={handleFileChange} />
         <span className='block border border-gray-300 rounded-lg p-2 text-center cursor-pointer'>
           Subir Imagen
         </span>

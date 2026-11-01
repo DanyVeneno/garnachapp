@@ -24,7 +24,7 @@ export default function EditMenuItemPage() {
         setMenuItem(item);
       });
     });
-  }, []);
+  }, [id]);
 
   async function handleFormSubmit(ev, data) {
     ev.preventDefault();
@@ -87,7 +87,7 @@ export default function EditMenuItemPage() {
           <span>Mostrar todas las tarjetas del menu</span>
         </Link>
       </div>
-      <MenuItemForm menuItem={menuItem} onSubmit={handleFormSubmit} />
+      {menuItem ? <MenuItemForm key={id} menuItem={menuItem} onSubmit={handleFormSubmit} /> : <p>Cargando producto...</p>}
       <div className='max-w-md mx-auto mt-2'>
         <div className='max-w-xs ml-auto pl-4'>
           <DeleteButton

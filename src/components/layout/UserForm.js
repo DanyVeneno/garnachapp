@@ -37,7 +37,7 @@ export default function UserForm({ user, onSave }) {
             name: userName,
             image,
             phone,
-            admin,
+            ...(loggedInUserData?.admin ? { admin } : {}),
             streetAddress,
             city,
             country,
@@ -56,7 +56,7 @@ export default function UserForm({ user, onSave }) {
         <input
           type='email'
           disabled={true}
-          value={user.email}
+          value={user?.email || ""}
           placeholder={"email"}
         />
         <AddressInputs

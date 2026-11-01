@@ -18,7 +18,6 @@ export default function OrderPage() {
       }
     }
     if (id) {
-      setLoadingOrder(true);
       fetch("/api/orders?_id=" + id).then((res) => {
         res.json().then((orderData) => {
           setOrder(orderData);
@@ -26,7 +25,7 @@ export default function OrderPage() {
         });
       });
     }
-  }, []);
+  }, [id, clearCart]);
 
   let subtotal = 0;
   if (order?.cartProducts) {

@@ -2,7 +2,7 @@ import { CartContext } from "@/components/AppContext";
 import MenuItemTile from "@/components/menu/MenuItemTile";
 import Image from "next/image";
 import { useContext, useState } from "react";
-import FlyingButton from "react-flying-item";
+import FlyingButton from "@/components/menu/FlyingButton";
 import toast from "react-hot-toast";
 
 export default function MenuItem(menuItem) {
@@ -14,15 +14,13 @@ export default function MenuItem(menuItem) {
   const { addToCart } = useContext(CartContext);
 
   async function handleAddToCartButtonClick() {
-    console.log("add to cart");
-    const hasOptions = sizes.length > 0 || extraIngredientPrices.length > 0;
+    const hasOptions = sizes?.length > 0 || extraIngredientPrices?.length > 0;
     if (hasOptions && !showPopup) {
       setShowPopup(true);
       return;
     }
     addToCart(menuItem, selectedSize, selectedExtras);
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log("hiding popup");
     setShowPopup(false);
   }
   function handleExtraThingClick(ev, extraThing) {
@@ -116,10 +114,9 @@ export default function MenuItem(menuItem) {
                   ))}
                 </div>
               )}
-              <FlyingButton targetTop={"5%"} targetLeft={"95%"} src={image}>
+              <FlyingButton src={image} onClick={handleAddToCartButtonClick}>
                 <div
                   className='primary sticky bottom-2'
-                  onClick={handleAddToCartButtonClick}
                 >
                   Agregar ${selectedPrice}
                 </div>

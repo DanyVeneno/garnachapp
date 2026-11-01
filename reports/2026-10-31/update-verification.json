@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-31",
+  "timezone": "America/Mexico_City",
+  "node": "v24.22.1",
+  "versions": {
+    "@auth/mongodb-adapter": "3.11.3",
+    "@aws-sdk/client-s3": "3.1161.0",
+    "bcrypt": "6.0.0",
+    "mongodb": "6.21.0",
+    "mongoose": "9.11.4",
+    "next": "16.4.3",
+    "next-auth": "4.24.15",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-hot-toast": "2.6.1",
+    "stripe": "23.1.0",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "10.14.0",
+    "eslint-config-next": "16.4.3",
+    "postcss": "8.5.32",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3"
+  },
+  "checks": {
+    "lint": {
+      "exitCode": 0,
+      "warnings": 0
+    },
+    "typecheck": {
+      "exitCode": 0,
+      "alsoVerifiedInFinalBuild": true
+    },
+    "unitTests": {
+      "exitCode": 0,
+      "passed": 17
+    },
+    "productionBuild": {
+      "exitCode": 0,
+      "generationProgress": "23/23",
+      "syntheticCredentials": true,
+      "mongoConnectionErrors": false
+    },
+    "httpSmoke": {
+      "exitCode": 0,
+      "passed": 11,
+      "syntheticCredentials": true,
+      "temporaryServerStopped": true
+    },
+    "diffCheck": {
+      "exitCode": 0
+    },
+    "dependencyAudit": {
+      "exitCode": 4,
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 9,
+        "high": 0,
+        "critical": 0
+      },
+      "dependencies": 508,
+      "devDependencies": 0,
+      "optionalDependencies": 0,
+      "totalDependencies": 508
+    }
+  },
+  "developmentServer": {
+    "pid": 16784,
+    "url": "http://127.0.0.1:3000",
+    "status": 200,
+    "brandVerified": true
+  },
+  "limits": [
+    "No live Google, MongoDB, S3 or Stripe transaction tests",
+    "No production deployment",
+    "No completed visual browser QA",
+    "Nine moderate minimatch advisory paths in development tools remain",
+    "Some lint plugin peer ranges do not declare ESLint 10, though lint passes",
+    "TypeScript checkJs and strict mode remain disabled"
+  ]
+}

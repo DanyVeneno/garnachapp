@@ -52,7 +52,7 @@ export default function Header() {
     <header>
       <div className='flex items-center md:hidden justify-between'>
         <Link className='text-primary font-semibold text-2xl' href={"/"}>
-          <Image src='/log.png' width={100} height={50} />
+          <Image src='/log.png' width={100} height={50} alt='Roll Burrito Hub' />
         </Link>
         <div className='flex gap-8 items-center'>
           <Link href={"/cart"} className='relative'>
@@ -74,7 +74,7 @@ export default function Header() {
       {mobileNavOpen && (
         <div
           onClick={() => setMobileNavOpen(false)}
-          className="md:hidden p-4 bg-zinc-600 rounded-lg mt-2 flex flex-col gap-2 text-zinc-200 text-center  before:absolute before:h-[100px] before:w-[380px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-lime before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[140px] after:translate-x-1/3 after:bg-gradient-conic after:from-orange-200 after:via-orange-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-orange-700 before:dark:opacity-10 after:dark:from-orange-900 after:dark:via-[#ea580c] after:dark:opacity-40 before:lg:h-[260px] z-[-1] opacity-75"
+          className="md:hidden p-4 bg-zinc-600 rounded-lg mt-2 flex flex-col gap-2 text-zinc-200 text-center  before:absolute before:h-[100px] before:w-[380px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-lime before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[140px] after:translate-x-1/3 after:bg-gradient-conic after:from-orange-200 after:via-orange-200 after:blur-2xl after:content-[''] before:dark:bg-linear-to-br before:dark:from-transparent before:dark:to-orange-700 before:dark:opacity-10 after:dark:from-orange-900 after:dark:via-[#ea580c] after:dark:opacity-40 before:lg:h-[260px] z-[-1] "
         >
           <Link href={"/"}>Inicio</Link>
           <Link href={"/menu"}>Menu</Link>
@@ -86,7 +86,7 @@ export default function Header() {
       <div className='hidden md:flex items-center justify-between'>
         <nav className='flex items-center gap-8 text-gray-400 font-semibold'>
           <Link className='text-primary font-semibold text-2xl mb-2' href={"/"}>
-            <Image src='/log.png' width={100} height={50} />
+            <Image src='/log.png' width={100} height={50} alt='Roll Burrito Hub' />
           </Link>
 
           <Link href={"/"} className='mb-2'>

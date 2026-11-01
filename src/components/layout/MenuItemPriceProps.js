@@ -20,11 +20,9 @@ export default function MenuItemPriceProps({
 
   function editProp(ev, index, prop) {
     const newValue = ev.target.value;
-    setProps((prevSizes) => {
-      const newSizes = [...prevSizes];
-      newSizes[index][prop] = newValue;
-      return newSizes;
-    });
+    setProps((prevSizes) => prevSizes.map((item, currentIndex) =>
+      currentIndex === index ? { ...item, [prop]: newValue } : item
+    ));
   }
 
   function removeProp(indexToRemove) {

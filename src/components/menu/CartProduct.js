@@ -32,7 +32,7 @@ export default function CartProduct({ product, onRemove }) {
       </div>
       {!!onRemove && (
         <div className='ml-2'>
-          <button type='button' onClick={() => onRemove(index)} className='p-2'>
+          <button type='button' onClick={onRemove} aria-label='Eliminar producto' className='p-2'>
             <Trash />
           </button>
         </div>

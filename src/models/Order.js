@@ -9,6 +9,9 @@ const OrderSchema = new Schema(
     city: String,
     country: String,
     cartProducts: Object,
+    amountTotal: Number,
+    currency: String,
+    stripeSessionId: String,
     paid: { type: Boolean, default: false }
   },
   { timestamps: true }

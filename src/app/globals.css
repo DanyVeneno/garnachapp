@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+/* Keep the v3 border and button defaults while adopting Tailwind 4. */
+@layer base {
+  *, ::before, ::after { border-color: var(--color-gray-200, currentColor); }
+  button:not(:disabled), [role="button"]:not(:disabled) { cursor: pointer; }
+}
 
 section.hero {
   @apply block md:grid;

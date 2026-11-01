@@ -11,37 +11,25 @@ import toast from "react-hot-toast";
 
 export default function CartPage() {
   const { cartProducts, removeCartProduct } = useContext(CartContext);
-  const [address, setAddress] = useState({});
+  const [addressOverrides, setAddressOverrides] = useState({});
   const { data: profileData } = useProfile();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       if (window.location.href.includes("canceled=1")) {
-        toast.error("Tu pago tuvo exito, NO se realizo 😔");
+        toast.error("El pago fue cancelado. No se realizó el cobro.");
       }
     }
   }, []);
 
-  useEffect(() => {
-    if (profileData?.city) {
-      const { phone, streetAddress, city, postalCode, country } = profileData;
-      const addressFromProfile = {
-        phone,
-        streetAddress,
-        city,
-        postalCode,
-        country,
-      };
-      setAddress(addressFromProfile);
-    }
-  }, [profileData]);
+  const address = Object.fromEntries(["phone", "streetAddress", "postalCode", "city", "country"].map(key => [key, addressOverrides[key] ?? profileData?.[key] ?? ""]));
 
   let subtotal = 0;
   for (const p of cartProducts) {
     subtotal += cartProductPrice(p);
   }
   function handleAddressChange(propName, value) {
-    setAddress((prevAddress) => ({ ...prevAddress, [propName]: value }));
+    setAddressOverrides((prevAddress) => ({ ...prevAddress, [propName]: value }));
   }
   async function proceedToCheckout(ev) {
     ev.preventDefault();
@@ -57,12 +45,14 @@ export default function CartPage() {
         }),
       }).then(async (response) => {
         if (response.ok) {
+          const checkoutUrl = await response.json();
+          window.location = checkoutUrl;
           resolve();
-          window.location = await response.json();
         } else {
-          reject();
+          const error = await response.json();
+          reject(new Error(error.error || "No se pudo preparar el pago"));
         }
-      });
+      }).catch(reject);
     });
 
     await toast.promise(promise, {
@@ -86,7 +76,7 @@ export default function CartPage() {
       <div className='text-center'>
         <SectionHeaders mainHeader='Carrito' />
       </div>
-      <div className='mt-8 grid gap-8 grid-cols-2'>
+      <div className='mt-8 grid gap-8 grid-cols-1 md:grid-cols-2'>
         <div>
           {cartProducts?.length === 0 && (
             <div>No hay productos en tu carrito de compras</div>
@@ -96,7 +86,7 @@ export default function CartPage() {
               <CartProduct
                 key={index}
                 product={product}
-                onRemove={removeCartProduct}
+                onRemove={() => removeCartProduct(index)}
               />
             ))}
           <div className='py-2 pr-16 flex justify-end items-center'>

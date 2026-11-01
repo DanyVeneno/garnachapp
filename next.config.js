@@ -10,6 +10,9 @@ const nextConfig = {
         protocol: "https",
         hostname: "garnachapp.s3.amazonaws.com",
       },
+      ...(process.env.AWS_S3_BUCKET && process.env.AWS_S3_BUCKET !== "garnachapp"
+        ? [{ protocol: "https", hostname: `${process.env.AWS_S3_BUCKET}.s3.amazonaws.com` }]
+        : []),
     ],
   },
 };

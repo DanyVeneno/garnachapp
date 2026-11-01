@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-31",
+  "externalCalls": 0,
+  "checks": 2,
+  "findings": [
+    {
+      "id": "FUN-01",
+      "description": "Cart remove button throws index is not defined",
+      "reproduced": true
+    },
+    {
+      "id": "FUN-02",
+      "description": "Unauthenticated profile stays loading instead of redirecting",
+      "reproduced": true
+    }
+  ],
+  "limitation": "Components executed with synthetic dependencies and state; not an end-to-end browser test."
+}

@@ -17,7 +17,7 @@ export default function EditUserPage() {
         setUser(user);
       });
     });
-  }, []);
+  }, [id]);
 
   async function handleSaveButtonClick(ev, data) {
     ev.preventDefault();
@@ -38,7 +38,7 @@ export default function EditUserPage() {
     });
   }
 
-  if (loading) {
+  if (loading || !user) {
     return "Cargando perfil de usuario...";
   }
 

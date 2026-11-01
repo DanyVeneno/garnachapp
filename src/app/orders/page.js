@@ -9,27 +9,28 @@ import { useEffect, useState } from "react";
 export default function OrdersPage() {
   const [orders, setOrders] = useState([]);
   const [loadingOrders, setLoadingOrders] = useState(true);
+  const [error, setError] = useState("");
   const { loading, data: profile } = useProfile();
 
   useEffect(() => {
-    fetchOrders();
+    let active = true;
+    fetch("/api/orders")
+      .then(async response => {
+        if (!response.ok) throw new Error(response.status === 401 ? "Inicia sesión para consultar tus pedidos." : "No se pudieron cargar los pedidos.");
+        return response.json();
+      })
+      .then(items => { if (active) setOrders(items.reverse()); })
+      .catch(error => { if (active) setError(error.message); })
+      .finally(() => { if (active) setLoadingOrders(false); });
+    return () => { active = false; };
   }, []);
-
-  function fetchOrders() {
-    setLoadingOrders(true);
-    fetch("/api/orders").then((res) => {
-      res.json().then((orders) => {
-        setOrders(orders.reverse());
-        setLoadingOrders(false);
-      });
-    });
-  }
 
   return (
     <section className='mt-8 max-w-2xl mx-auto'>
       <UserTabs isAdmin={profile.admin} />
       <div className='mt-8'>
         {loadingOrders && <div>Cargando pedido...</div>}
+        {error && <p role="alert">{error}</p>}
         {orders?.length > 0 &&
           orders.map((order) => (
             <div

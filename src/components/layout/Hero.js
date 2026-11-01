@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="hero place-items-center text-center before:absolute before:h-[100px] before:w-[380px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-lime before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[140px] after:translate-x-1/3 after:bg-gradient-conic after:from-lime-200 after:via-lime-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-lime-700 before:dark:opacity-10 after:dark:from-lime-900 after:dark:via-[#84cc16] after:dark:opacity-40 before:lg:h-[260px] z-[-1]">
+    <section className="hero place-items-center text-center before:absolute before:h-[100px] before:w-[380px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-lime before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[140px] after:translate-x-1/3 after:bg-gradient-conic after:from-lime-200 after:via-lime-200 after:blur-2xl after:content-[''] before:dark:bg-linear-to-br before:dark:from-transparent before:dark:to-lime-700 before:dark:opacity-10 after:dark:from-lime-900 after:dark:via-[#84cc16] after:dark:opacity-40 before:lg:h-[260px] z-[-1]">
       <div className='py-16'>
         <h1 className='text-4xl font-semibold'>
           Los Autenticos del norte ahora en linea,
